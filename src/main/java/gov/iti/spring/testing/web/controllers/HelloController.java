@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController("/hello")
 public class HelloController {
 
-//    @Autowired
-//    private HelloService helloService;
+    @Autowired
+    private HelloService helloService;
 
     @GetMapping("/hello")
     public ResponseEntity<String> greeting() {
-//        helloService.sayHello();
-        return ResponseEntity.ok("Hello, intake 44");
+        String result = helloService.sayHello();
+        return ResponseEntity.ok(result);
     }
 }
